@@ -1,17 +1,20 @@
 // ignore_for_file: deprecated_member_use
-
 import 'package:praktikum6/helpers/db_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
+// 2031710159 Dikhi Achmad Dani
+import 'package:praktikum6/models/Item.dart';
+import 'package:praktikum6/pages/entryform.dart';
 
-import 'Item.dart';
-import 'entryform.dart';
-
+// 2031710159 Dikhi Achmad Dani
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   HomeState createState() => HomeState();
 }
 
+//2031710159 Dikhi Achmad Dani
 class HomeState extends State<Home> {
   DbHelper dbHelper = DbHelper();
   int count = 0;
@@ -19,13 +22,13 @@ class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     updateListView();
-
+// 2031710159 Dikhi Achmad Dani
     if (itemList == null) {
       itemList = <Item>[];
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar Item'),
+        title: Text('Daftar Item\n2031710159 Dikhi Achmad Dani'),
       ),
       body: Column(children: [
         Expanded(
@@ -40,7 +43,7 @@ class HomeState extends State<Home> {
               onPressed: () async {
                 var item = await navigateToEntryForm(context, null);
                 if (item != null) {
-                  //TODO 2 Panggil Fungsi untuk Insert ke DB
+                  //TODO 2 Panggil Fungsi untuk Insert ke DB Dikhi Achmad Dani 2031710159
                   int result = await dbHelper.insert(item);
                   if (result > 0) {
                     updateListView();
@@ -58,7 +61,7 @@ class HomeState extends State<Home> {
     var result = await Navigator.push(context,
         MaterialPageRoute(builder: (BuildContext context) {
       return EntryForm(item);
-    }));
+    })); // 2031710159 DikhiAchmadDani
     return result;
   }
 
@@ -72,38 +75,36 @@ class HomeState extends State<Home> {
           elevation: 2.0,
           child: ListTile(
             isThreeLine: true,
-            leading: CircleAvatar(
-              backgroundColor: Colors.red,
+            leading: const CircleAvatar(
+              backgroundColor: Colors.indigo,
               child: Icon(Icons.ad_units),
-            ),
+            ), //DikhiAchmadDani2031710159
             title: Text(
-              this.itemList![index].name,
+              itemList![index].name,
               style: textStyle,
             ),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Price : " + this.itemList![index].price.toString()),
-                SizedBox(
+                Text("Price : " + itemList![index].price.toString()),
+                const SizedBox(
                   height: 5.0,
                 ),
-                Text("Stock : " + this.itemList![index].stock.toString()),
-                Text("Kode Barang : " +
-                    this.itemList![index].kodeBarang.toString()),
+                Text("Stock : " + itemList![index].stock.toString()),
+                Text("Kode Barang : " + itemList![index].kodeBarang.toString()),
               ],
             ),
             trailing: GestureDetector(
               child: Icon(Icons.delete),
               onTap: () async {
-                //TODO 3 Panggil Fungsi untuk Delete dari DB berdasarkan Item
+                //TODO 3 Panggil Fungsi untuk Delete dari DB berdasarkan ItemDikhiAchmadDani2031710159
                 dbHelper.delete(itemList![index].id);
                 updateListView();
               },
             ),
             onTap: () async {
-              var item =
-                  await navigateToEntryForm(context, this.itemList![index]);
-              //TODO 4 Panggil Fungsi untuk Edit data
+              var item = await navigateToEntryForm(context, itemList![index]);
+              //TODO 4 Panggil Fungsi untuk Edit data2031710159DikhiAchmadDani
               dbHelper.update(item!);
               updateListView();
             },
@@ -117,6 +118,7 @@ class HomeState extends State<Home> {
   void updateListView() {
     final Future<Database> dbFuture = dbHelper.initDb();
     dbFuture.then((database) {
+      //DikhiAchmad Dani2031710159
       //TODO 1 Select data dari DB
       Future<List<Item>> itemListFuture = dbHelper.getItemList();
       itemListFuture.then((itemList) {

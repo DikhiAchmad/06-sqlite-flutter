@@ -2,8 +2,7 @@ import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-
-import 'package:praktikum6/Item.dart';
+import 'package:praktikum6/models/Item.dart';
 
 class DbHelper {
   static DbHelper? _dbHelper;
@@ -20,7 +19,7 @@ class DbHelper {
     return itemDatabase;
   }
 
-  //buat tabel baru dengan nama item
+  //buat tabel baru dengan nama item 2031710159 Dikhi Achmad Dani
   void _createDb(Database db, int version) async {
     await db.execute('''
         CREATE TABLE item (
@@ -55,7 +54,7 @@ class DbHelper {
     return count;
   }
 
-  //delete databases
+  //delete databases2031710159 DikhiAchmad Dani
   Future<int> delete(int id) async {
     Database db = await initDb();
     int count = await db.delete('item', where: 'id=?', whereArgs: [id]);
@@ -86,3 +85,4 @@ class DbHelper {
     return _database!;
   }
 }
+// 2031710159 Dikhi Achmad Dani

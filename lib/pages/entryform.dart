@@ -1,8 +1,8 @@
 // ignore_for_file: deprecated_member_use
-
+// 2031710159 Dikhi Achmad Dani
 import 'package:flutter/material.dart';
 
-import 'package:praktikum6/Item.dart';
+import 'package:praktikum6/models/Item.dart';
 
 class EntryForm extends StatefulWidget {
   final Item? item;
@@ -11,6 +11,7 @@ class EntryForm extends StatefulWidget {
   EntryFormState createState() => EntryFormState(item);
 }
 
+// 2031710159 Dikhi Achmad Dani
 //class controller
 class EntryFormState extends State<EntryForm> {
   Item? item;
@@ -19,7 +20,7 @@ class EntryFormState extends State<EntryForm> {
   TextEditingController priceController = TextEditingController();
   TextEditingController stockController = TextEditingController();
   TextEditingController kodeBarangController = TextEditingController();
-
+// 2031710159 Dikhi Achmad Dani
   @override
   Widget build(BuildContext context) {
     //kondisi
@@ -29,10 +30,12 @@ class EntryFormState extends State<EntryForm> {
       stockController.text = item!.stock.toString();
       kodeBarangController.text = item!.kodeBarang;
     }
-    //rubah
+    //rubah 2031710159 Dikhi Achmad Dani
     return Scaffold(
         appBar: AppBar(
-          title: item == null ? const Text('Tambah') : const Text('Ubah'),
+          title: item == null
+              ? const Text('Tambah\n2031710159 Dikhi Achmad Dani')
+              : const Text('Ubah\n2031710159 Dikhi Achmad Dani'),
           leading: const Icon(Icons.keyboard_arrow_left),
         ),
         body: Padding(
@@ -107,12 +110,12 @@ class EntryFormState extends State<EntryForm> {
                   },
                 ),
               ),
-              // tombol button
+              // tombol button DikhiAchmadDani2031710159
               Padding(
                 padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: Row(
                   children: <Widget>[
-                    // tombol simpan
+                    // tombol simpan Dikhi Achmad Dani2031710159
                     Expanded(
                       child: RaisedButton(
                         color: Theme.of(context).primaryColorDark,
@@ -131,7 +134,7 @@ class EntryFormState extends State<EntryForm> {
                               kodeBarangController.text,
                             );
                           } else {
-                            // ubah data
+                            // ubah data Dikhi Achmad Dani 2031710159
                             item?.name = nameController.text;
                             item?.price = int.parse(priceController.text);
                             item?.stock = int.parse(stockController.text);
@@ -140,7 +143,7 @@ class EntryFormState extends State<EntryForm> {
                           Navigator.pop(context, item);
                         },
                       ),
-                    ),
+                    ), // 2031710159 Dikhi Achmad Dani
                     Container(
                       width: 5.0,
                     ),
@@ -155,7 +158,7 @@ class EntryFormState extends State<EntryForm> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                      ),
+                      ), // Dikhi Achmad Dani2031710159
                     ),
                   ],
                 ),
@@ -164,4 +167,4 @@ class EntryFormState extends State<EntryForm> {
           ),
         ));
   }
-}
+}// DikhiAchmad Dani2031710159

@@ -1,16 +1,29 @@
-# praktikum6
+# SQLITE FLUTTER
 
-A new Flutter project.
+NIM: 2031710159 <br /> Nama: Dikhi Achmad Dani <br /> Kelas: MI-2C <br /> Prodi: D3-MI
 
-## Getting Started
+# Hasil Praktikum
 
-This project is a starting point for a Flutter application.
+halaman awal ketika masuk aplikasi
 
-A few resources to get you started if this is your first Flutter project:
+![hal_awal](screenshot/1.jpeg)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+halaman tambah item(entry form)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![tambah_item](screenshot/2.jpeg)
+
+hasil tambah item
+
+![berhasil_tambah](screenshot/3.jpeg)
+
+halaman edit item
+
+![edit_item](screenshot/4.jpeg)
+
+hasil edit item
+
+![berhasil_edit](screenshot/5.jpeg)
+
+hasil hapus item
+
+![berhasil_edit](screenshot/hapus.jpeg)
